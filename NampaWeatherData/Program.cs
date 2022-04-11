@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more informationvar client = new HttpClient();
 var client = new HttpClient();
+string apiKey = File.ReadAllText("./apikey.txt");
+Console.WriteLine(apiKey);
 var request = new HttpRequestMessage
 {
 	Method = HttpMethod.Get,
@@ -7,7 +9,7 @@ var request = new HttpRequestMessage
 	Headers =
 	{
 		{ "X-RapidAPI-Host", "community-open-weather-map.p.rapidapi.com" },
-		{ "X-RapidAPI-Key", "3ab517f604mshea3b863b9ef1a4bp199389jsnc2b5b70ba2b6" },
+		{ "X-RapidAPI-Key", apiKey },
 	},
 };
 using (var response = await client.SendAsync(request))
