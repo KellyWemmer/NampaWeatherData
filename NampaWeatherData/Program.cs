@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more informationvar client = new HttpClient();
 var client = new HttpClient();
 string apiKey = File.ReadAllText("./apikey.txt");
-Console.WriteLine(apiKey);
 var request = new HttpRequestMessage
 {
 	Method = HttpMethod.Get,
